@@ -57,13 +57,11 @@ app.post('/uploadJsondata', (req, res) => {
 
   readerStream.on('end', async () => {
     await taskSchemaTable.insertMany(arrayOfUsers); // left over data
-    
-    console.log(`Data uploading  complete `)
-    res.status(200).send('\nImport completed, closing connection... the data');
 
-  });
+    console.log(`Data upload completed `)
+      });
 
-  
+      res.send('Thanks, Data start inserting into the database');
 
 });
 //***********************End Of Post API***********************************************888 */
